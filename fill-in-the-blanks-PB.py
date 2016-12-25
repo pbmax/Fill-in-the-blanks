@@ -22,24 +22,21 @@ answers_hard = ["find","replace","while","or"]
 paragraph_hard = "Review of common Python methods! The __1__ method returns the starting index of the substring. The __2__ method replaces all instances of the old string with the new string. __3__ loops repeat an action until the expression is True. The __4__ operator evaluates whether the 1st expression is True, and does not evaluate the second expression if it is."
 
 def word_answer(word,answers,index):
-"""This function takes as inputs a word, an answer set, and an index
-and outputs either the word (if it equals the answer) or the space_holder (if the word is not equal to the answer)"""
+    """This function takes as inputs a word, an answer set, and an index and outputs either the word (if it equals the answer) or the space_holder (if the word is not equal to the answer)"""
     if word == answers[index-1]:
         return word
     else:
         return space_holders[index-1]
 
 def word_in_spaceholder(word, space_holder):
-"""This function takes as inputs a word and a specific "spaceholder" (e.g. "__1__" )
-and returns as output either the word itself (if equal to the spaceholder) or nothing (if the word is not equal to the spaceholder)"""
+    """This function takes as inputs a word and a specific "spaceholder" (e.g. "__1__" ) and returns as output either the word itself (if equal to the spaceholder) or nothing (if the word is not equal to the spaceholder)"""
     if word == space_holder:
             return word
     else:
         return None
 
 def replace_words(paragraph,space_holder,user_answer):
-"""This function takes in a paragraph, a space_holder and a user's answer,
-and replaces all instances of the spaceholder with the user's answer (when correct)."""
+    """This function takes in a paragraph, a space_holder and a user's answer, and replaces all instances of the spaceholder with the user's answer (when correct)."""
     replaced = []
     paragraph = paragraph.split()
     for word in paragraph:
@@ -53,8 +50,7 @@ and replaces all instances of the spaceholder with the user's answer (when corre
     return paragraph
 
 def fill_in_the_blanks(paragraph,space_holders,answers):
-"""This function takes as inputs a paragraph, a set of placeholders, and an answer set.
-It integrates the above functions, and calls for user input based on the paragraph prompts"""
+    """This function takes as inputs a paragraph, a set of placeholders, and an answer set. It integrates the above functions, and calls for user input based on the paragraph prompts"""
     print paragraph_intro
     print paragraph
     index = 0
@@ -78,7 +74,7 @@ It integrates the above functions, and calls for user input based on the paragra
             count += 1
 
 def play_the_game():
-"""This integrates all of the functions and inputs above into a game with 3 possible levels (easy, medium, and hard)."""
+    """This integrates all of the functions and inputs above into a game with 3 possible levels (easy, medium, and hard)."""
     print intro
     user_level = raw_input("Type in a level: ")
     print "You chose: " + user_level + ".\n"
